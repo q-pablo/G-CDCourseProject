@@ -6,7 +6,7 @@ library(dplyr)
 dir_path <- "./UCI HAR Dataset/test/"
 
 # Get the list of files in the directory
-files <- list.files(path = dir_path, full.names = TRUE, recursive = TRUE)
+files <- list.files(path = dir_path, full.names = TRUE, recursive = FALSE)
 
 # Create an empty list to store the data
 testdata <- list()
