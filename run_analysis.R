@@ -79,3 +79,10 @@ secondDataSet <- firstDataSet %>%
 
 ## Rename the column names to include "avg_" instead of "data_"
 colnames(secondDataSet) <- gsub("data_", "avg_",colnames(secondDataSet))
+
+## Write the data sets to files
+if(!file.exists("output")) {
+  dir.create("output")
+}
+write.table(firstDataSet, file = "output/FirstDataSet.txt", sep = "\t", row.names = FALSE)
+write.table(secondDataSet, file = "output/SecondDataSet.txt", sep = "\t", row.names = FALSE)
