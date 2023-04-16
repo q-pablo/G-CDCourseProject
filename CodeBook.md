@@ -1,0 +1,88 @@
+Getting and Cleaning Data - Course Project Code Book
+================
+
+## Variable Information
+
+- subject <br>There are thirty subjects in this data set. They are
+  identified by numbers from 1 to 30.
+- activity <br>There are six activities that the subjects were recorded
+  performing. They are listed below.
+  - laying
+  - sitting
+  - standing
+  - walking
+  - walkingupstairs
+  - walkingdownstairs
+- avg_tBodyAcc-mean()-X
+- avg_tBodyAcc-mean()-Y
+- avg_tBodyAcc-mean()-Z
+- avg_tBodyAcc-std()-X
+- avg_tBodyAcc-std()-Y
+- avg_tBodyAcc-std()-Z
+- avg_tGravityAcc-mean()-X
+- avg_tGravityAcc-mean()-Y
+- avg_tGravityAcc-mean()-Z
+- avg_tGravityAcc-std()-X
+- avg_tGravityAcc-std()-Y
+- avg_tGravityAcc-std()-Z
+- avg_tBodyAccJerk-mean()-X
+- avg_tBodyAccJerk-mean()-Y
+- avg_tBodyAccJerk-mean()-Z
+- avg_tBodyAccJerk-std()-X
+- avg_tBodyAccJerk-std()-Y
+- avg_tBodyAccJerk-std()-Z
+- avg_tBodyGyro-mean()-X
+- avg_tBodyGyro-mean()-Y
+- avg_tBodyGyro-mean()-Z
+- avg_tBodyGyro-std()-X
+- avg_tBodyGyro-std()-Y
+- avg_tBodyGyro-std()-Z
+- avg_tBodyGyroJerk-mean()-X
+- avg_tBodyGyroJerk-mean()-Y
+- avg_tBodyGyroJerk-mean()-Z
+- avg_tBodyGyroJerk-std()-X
+- avg_tBodyGyroJerk-std()-Y
+- avg_tBodyGyroJerk-std()-Z
+- avg_tBodyAccMag-mean()
+- avg_tBodyAccMag-std()
+- avg_tGravityAccMag-mean()
+- avg_tGravityAccMag-std()
+- avg_tBodyAccJerkMag-mean()
+- avg_tBodyAccJerkMag-std()
+- avg_tBodyGyroMag-mean()
+- avg_tBodyGyroMag-std()
+- avg_tBodyGyroJerkMag-mean()
+- avg_tBodyGyroJerkMag-std()
+- avg_fBodyAcc-mean()-X
+- avg_fBodyAcc-mean()-Y
+- avg_fBodyAcc-mean()-Z
+- avg_fBodyAcc-std()-X
+- avg_fBodyAcc-std()-Y
+- avg_fBodyAcc-std()-Z
+- avg_fBodyAcc-meanFreq()-X
+- avg_fBodyAcc-meanFreq()-Y
+- avg_fBodyAcc-meanFreq()-Z
+- avg_fBodyAccJerk-mean()-X
+- avg_fBodyAccJerk-mean()-Y
+- avg_fBodyAccJerk-mean()-Z
+- avg_fBodyAccJerk-std()-X
+- avg_fBodyAccJerk-std()-Y
+- avg_fBodyAccJerk-std()-Z
+- avg_fBodyAccJerk-meanFreq()-X
+- avg_fBodyAccJerk-meanFreq()-Y
+- avg_fBodyAccJerk-meanFreq()-Z
+- avg_fBodyGyro-mean()-X
+- avg_fBodyGyro-mean()-Y
+- avg_fBodyGyro-mean()-Z
+- avg_fBodyGyro-std()-X
+- avg_fBodyGyro-std()-Y
+- avg_fBodyGyro-std()-Z
+- avg_fBodyGyro-meanFreq()-X
+- avg_fBodyGyro-meanFreq()-Y
+- avg_fBodyGyro-meanFreq()-Z
+- avg_fBodyAccMag-mean()
+- avg_fBodyAccMag-std()
+- avg_fBodyAccMag-meanFreq()
+- avg_fBodyBodyAccJerkMag-mean()
+- avg_fBodyBodyAccJerkMag-std()
+- avg_fBodyBodyAccJerkMag-meanFreq()

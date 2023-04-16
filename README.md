@@ -1,33 +1,45 @@
-Untitled
+Getting and Cleaning Data - Course Project README file
 ================
 
-## GitHub Documents
+## Introduction
 
-This is an R Markdown format used for publishing markdown documents to
-GitHub. When you click the **Knit** button all R code chunks are run and
-a markdown file (.md) suitable for publishing to GitHub is generated.
+The aim of this document is to explain the course project.
 
-## Including Code
+## Project Structure
 
-You can include R code in the document as follows:
+At root level, you’ll find:
 
-``` r
-summary(cars)
-```
+- `UCI HAR Dataset`: The directory with the data provided with the
+  course project. The structure underneath this directory is unmodified
+  from the original source.
+- `README.Rmd`: The source Rmd file to create the render of the README.
+- `README.md`: The rendered README file.
+- `CodeBook.md`: Explains all variables and summaries calculated.
+- `run_analysis.R`: This script contains the processing steps to
+  generate the two data sets as described in the project assignment
+  description.
 
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
+## Usage and Results
 
-## Including Plots
+After downloading the project, simply run the run_analysis.R script.
 
-You can also embed plots, for example:
+In memory, the tidy data set with the average of each variable for each
+activity and each subject is called `TidyDataSet`
 
-![](README_files/figure-gfm/pressure-1.png)<!-- -->
+The resulting `TidyDataSet.txt` file will be stored locally under
+`./output/`, after running the script.
 
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+## Data
+
+For convenience, the pre-processed data is already included in the
+project. It was collected from the course project instructions. [you can
+find the zip file
+here.](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+
+The data was originally collected by the course authors from the [Human
+Activity Recognition Using Smartphones Data
+Set.](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
+## Acknowledgements
+
+To you, the one reviewing this work. Thank you for taking the time :)

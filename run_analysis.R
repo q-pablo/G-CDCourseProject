@@ -84,5 +84,6 @@ colnames(secondDataSet) <- gsub("data_", "avg_",colnames(secondDataSet))
 if(!file.exists("output")) {
   dir.create("output")
 }
-write.table(firstDataSet, file = "output/FirstDataSet.txt", sep = "\t", row.names = FALSE)
-write.table(secondDataSet, file = "output/SecondDataSet.txt", sep = "\t", row.names = FALSE)
+
+TidyDataSet <- secondDataSet
+write.table(secondDataSet, file = "output/TidyDataSet.txt", sep = "\t", row.names = FALSE)
