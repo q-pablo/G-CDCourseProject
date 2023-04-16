@@ -3,7 +3,8 @@ Getting and Cleaning Data - Course Project README file
 
 ## Introduction
 
-The aim of this document is to explain the course project.
+The aim of this document is to explain how to use this project to
+generate the tidy data set.
 
 ## Project Structure
 
@@ -23,11 +24,11 @@ At root level, you’ll find:
 
 After downloading the project, simply run the run_analysis.R script.
 
-In memory, the tidy data set with the average of each variable for each
-activity and each subject is called `TidyDataSet`
-
 The resulting `TidyDataSet.txt` file will be stored locally under
 `./output/`, after running the script.
+
+Since you ran the script, you will also have the resulting table as an
+environment variable. It will be the variable called `TidyDataSet`.
 
 ## Data
 
