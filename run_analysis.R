@@ -29,7 +29,7 @@ for (file in files) {
   allData[[file]] <- read.table(file)
 }
 
-## Merge training and test sets to create one data set
+## Merge training and test sets to create one data frame
 testDataFrame <- data.frame(subject = allData[[1]],
                             activity = allData[[3]],
                             dataset = allData[[2]])
@@ -40,9 +40,20 @@ trainDataFrame <- data.frame(subject = allData[[4]],
 
 dataFrame <- bind_rows(testDataFrame,trainDataFrame)
 
+## Find the column names for each dataset column (aka measurements)
+## and create a vector to later use it to rename the columns in the 
+## main data frame
+file_dir_path <- "./UCI HAR Dataset/features.txt"
+features_list <- read.table(file_dir_path)
+features_list$V1 <- NULL
+vec <- unlist(features_list)
+
+## Add "data_" to the name of each variable for easier handling
+vec <- paste("data_", vec, sep="")
+
 ## Appropriately label the data set with descriptive variable names
-colnames(dataFrame)[1] <- "subject"
-colnames(dataFrame)[2] <- "activity"
+col_names    <- c("subject","activity",vec)
+colnames(dataFrame) <- col_names
 
 ## Use descriptive activity names to name the activities in the data set
 dataFrame$activity[dataFrame$activity == 1] <- "walking"
@@ -53,10 +64,15 @@ dataFrame$activity[dataFrame$activity == 5] <- "standing"
 dataFrame$activity[dataFrame$activity == 6] <- "laying"
 
 ## Extract mean and std dev for each measurement
-selected_columns <- select(dataFrame, dataset.V1:dataset.V561)
-mean   <- rowMeans(selected_columns)
-stddev <- rowSds(as.matrix(selected_columns))
+col_indexes  <- which(grepl("subject|activity|mean|std", col_names))
+firstDataSet <- dataFrame[,col_indexes]
 
 ## Create a second data set with:
 ## the average of each variable 
 ## for each activity and each subject
+secondDataSet <- firstDataSet %>%
+  group_by(subject, activity) %>%
+  summarize(across(starts_with("data_"), \(x) mean(x, na.rm = TRUE)))
+
+## Rename the column names to include "avg_" instead of "data_"
+colnames(secondDataSet) <- gsub("data_", "avg_",colnames(secondDataSet))
