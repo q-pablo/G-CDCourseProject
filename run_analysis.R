@@ -67,6 +67,9 @@ dataFrame$activity[dataFrame$activity == 6] <- "laying"
 col_indexes  <- which(grepl("subject|activity|mean|std", col_names))
 firstDataSet <- dataFrame[,col_indexes]
 
+## Sort data frame by subject to tidy data further
+firstDataSet <- firstDataSet[order(firstDataSet$subject),]
+
 ## Create a second data set with:
 ## the average of each variable 
 ## for each activity and each subject
