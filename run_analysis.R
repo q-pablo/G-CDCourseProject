@@ -1,6 +1,7 @@
 ## Load the necessary libraries
 library(readr)
 library(dplyr)
+library(matrixStats)
 
 ## Function to check if a string contains a particular substring
 contains_extension <- function(string, substring) {
@@ -28,7 +29,7 @@ for (file in files) {
   allData[[file]] <- read.table(file)
 }
 
-## Create data frame with Subject, Activity, and DataSet
+## Merge training and test sets to create one data set
 testDataFrame <- data.frame(subject = allData[[1]],
                             activity = allData[[3]],
                             dataset = allData[[2]])
@@ -39,6 +40,23 @@ trainDataFrame <- data.frame(subject = allData[[4]],
 
 dataFrame <- bind_rows(testDataFrame,trainDataFrame)
 
-## Name subject and activity columns properly
+## Appropriately label the data set with descriptive variable names
 colnames(dataFrame)[1] <- "subject"
 colnames(dataFrame)[2] <- "activity"
+
+## Use descriptive activity names to name the activities in the data set
+dataFrame$activity[dataFrame$activity == 1] <- "walking"
+dataFrame$activity[dataFrame$activity == 2] <- "walkingupstairs"
+dataFrame$activity[dataFrame$activity == 3] <- "walkingdownstairs"
+dataFrame$activity[dataFrame$activity == 4] <- "sitting"
+dataFrame$activity[dataFrame$activity == 5] <- "standing"
+dataFrame$activity[dataFrame$activity == 6] <- "laying"
+
+## Extract mean and std dev for each measurement
+selected_columns <- select(dataFrame, dataset.V1:dataset.V561)
+mean   <- rowMeans(selected_columns)
+stddev <- rowSds(as.matrix(selected_columns))
+
+## Create a second data set with:
+## the average of each variable 
+## for each activity and each subject
