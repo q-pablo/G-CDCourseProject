@@ -73,17 +73,16 @@ firstDataSet <- firstDataSet[order(firstDataSet$subject),]
 ## Create a second data set with:
 ## the average of each variable 
 ## for each activity and each subject
-secondDataSet <- firstDataSet %>%
+TidyDataSet <- firstDataSet %>%
   group_by(subject, activity) %>%
   summarize(across(starts_with("data_"), \(x) mean(x, na.rm = TRUE)))
 
 ## Rename the column names to include "avg_" instead of "data_"
-colnames(secondDataSet) <- gsub("data_", "avg_",colnames(secondDataSet))
+colnames(TidyDataSet) <- gsub("data_", "avg_",colnames(TidyDataSet))
 
-## Write the data sets to files
+## Write the tidy data set to a file
 if(!file.exists("output")) {
   dir.create("output")
 }
 
-TidyDataSet <- secondDataSet
-write.table(secondDataSet, file = "output/TidyDataSet.txt", sep = "\t", row.names = FALSE)
+write.table(TidyDataSet, file = "output/TidyDataSet.txt", sep = "\t", row.names = FALSE)
