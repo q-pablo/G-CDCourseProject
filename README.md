@@ -22,7 +22,7 @@ At root level, you’ll find:
 
 ## Usage and Results
 
-After downloading the project, simply run the run_analysis.R script.
+After downloading the project, simply run the `run_analysis.R` script.
 
 The resulting `TidyDataSet.txt` file will be stored locally under
 `./output/`, after running the script.
